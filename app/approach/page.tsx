@@ -1,0 +1,8 @@
+import { PageIntro, PageLink } from "@/components/page-intro";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+
+export const metadata = { title: "Approach" };
+
+const steps = [['01','Listen','Define the requirement, authority, timing and non-negotiables.'],['02','Qualify','Check the counterparties, constraints and commercial fit.'],['03','Frame','Set the responsibilities, risks and next decision in writing.'],['04','Coordinate','Keep the right people, documents and dates moving together.'],['05','Stay close','Follow through after the introduction or agreement.']];
+export default function ApproachPage() { return <><SiteHeader /><PageIntro eyebrow="How we work" title="A measured way to move." copy="The process is simple to describe. The discipline is in what happens between the steps." /><section className="shell py-24 md:py-36"><div className="max-w-3xl divide-y divide-forest/15">{steps.map(([n,t,c]) => <article className="grid gap-5 py-8 md:grid-cols-[80px_180px_1fr]" key={n}><span className="font-serif text-2xl text-jade">{n}</span><h2 className="font-serif text-2xl text-forest">{t}</h2><p className="leading-7">{c}</p></article>)}</div><div className="mt-24 bg-forest p-8 text-paper md:p-14"><p className="eyebrow text-gold">Risk, stated plainly</p><h2 className="section-title mt-6 max-w-2xl">The risk belongs in the room.</h2><p className="mt-6 max-w-xl text-lg leading-8 text-paper/70">Timing, specifications, payment, logistics and decision rights are not footnotes. They shape whether a transaction can work.</p><PageLink href="/contact"><span className="text-paper">Start a conversation</span></PageLink></div></section><SiteFooter /></>; }
